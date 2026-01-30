@@ -1,32 +1,32 @@
 import pygame
-import vatten
+import os
+import time
+import random
 
-pygame.init()
+class Jorden(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('/assets/jorden.jpg').convert_alpha()
+        self.image = pygame.transform.scale(self.image, (200, 100))
+        self.rect = self.image.get_rect(center=(400, 450))
+        self.moisture = 100
+        self.plant_alive = True
+        self.last_water = time.time()
+        self.water_offset = 0  # För rörligt vatten
 
-# Skapa fönster utanför loopen
-bakgrund = pygame.display.set_mode((1000, 600))
-playerImg = pygame.image.load('C:/Users/reema/Documents/KlimatStudio/assets/jorden.png')
-ikon = pygame.image.load("C:/Users/reema/Documents/KlimatStudio/assets/helloWorld.png")  # ikonbild (hello world logga)
-pygame.display.set_icon(ikon)
-pygame.display.set_caption("Självbevattningssystem")
+    def update(self):
+        if time.time() - self.last_water > 15:
+            self.moisture -= random.uniform(1, 3)
+            if self.moisture < 20:
+                self.dodr_blomma()
+        else:
+            self.moisture = 100
+        self.water_offset += 2  # Animera vatten
 
-running = True
-while running:
-    # Hantera events
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                running = False
-    
-    # Rita bakgrunden (svart som standard, eller fyll med färg om du vill)
-    bakgrund.fill((0, 0, 0))  # Svart bakgrund
-    
-    # Rita bilden (t.ex. jorden) på position (0, 0)
-    bakgrund.blit(playerImg, (0, 0))
-    vatten.displayVatten(bakgrund)
-    # Uppdatera displayen
-    pygame.display.update()
+    def dodr_blomma(self):
+        if self.plant_alive:
+            self.plant_alive = False
+            print("Blomman dog på Jorden!")  # Eller byt sprite
 
-pygame.quit()
+    def bevatta(self):
+        self.last_water = time.time()
