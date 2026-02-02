@@ -5,8 +5,8 @@ pygame.init()
 
 # Skapa fönster utanför loopen
 bakgrund = pygame.display.set_mode((1000, 600))
-playerImg = pygame.image.load('C:/Users/reema/Documents/KlimatStudio/assets/jorden.png')
-ikon = pygame.image.load("C:/Users/reema/Documents/KlimatStudio/assets/helloWorld.png")  # ikonbild (hello world logga)
+playerImg = pygame.image.load('assets/jorden.png')
+ikon = pygame.image.load("assets/hello_world.jpeg")  # ikonbild (hello world logga)
 pygame.display.set_icon(ikon)
 pygame.display.set_caption("Självbevattningssystem")
 
