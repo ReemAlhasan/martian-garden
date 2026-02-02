@@ -4,11 +4,11 @@ import vatten
 pygame.init()
 
 # Skapa fönster utanför loopen
-bakgrund = pygame.display.set_mode((1000, 600))
-playerImg = pygame.image.load('assets/jorden.png')
-ikon = pygame.image.load("assets/hello_world.jpeg")  # ikonbild (hello world logga)
+display = pygame.display.set_mode((1000, 600))
+bakgrund = pygame.image.load('assets/jorden.png')
+ikon = pygame.image.load('assets/hello_world.jpeg')  # ikonbild (hello world logga)
 pygame.display.set_icon(ikon)
-pygame.display.set_caption("Självbevattningssystem")
+pygame.display.set_caption('Självbevattningssystem')
 
 running = True
 while running:
@@ -21,11 +21,11 @@ while running:
                 running = False
     
     # Rita bakgrunden (svart som standard, eller fyll med färg om du vill)
-    bakgrund.fill((0, 0, 0))  # Svart bakgrund
+    display.fill((0, 0, 0))  # Svart bakgrund
     
     # Rita bilden (t.ex. jorden) på position (0, 0)
-    bakgrund.blit(playerImg, (0, 0))
-    vatten.displayVatten(bakgrund)
+    display.blit(bakgrund, (0, 0))
+    vatten.displayVatten(display)
     # Uppdatera displayen
     pygame.display.update()
 
