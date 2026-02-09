@@ -1,37 +1,31 @@
 import pygame
+import blommor
 import vatten
 
-pygame.init()
-
-# Skapa fönster
-display = pygame.display.set_mode((1000, 600))
 
 bakgrund = pygame.image.load('assets/jorden.png')
 ikon = pygame.image.load('assets/hello_world.jpeg')
 
-pygame.display.set_icon(ikon)
-pygame.display.set_caption('Självbevattningssystem')
 
-clock = pygame.time.Clock()
-running = True
+def displayJorden(screen, mode="manual"):
+    """Rita jorden, regnet och blommorna beroende på läge."""
+    pygame.display.set_icon(ikon)
+    pygame.display.set_caption('Självbevattningssystem')
 
-while running:
-   # clock.tick(60)  # limitera FPS (frames per second) - redigera denna (minska) om du har problem med prestandan!
+    screen.blit(bakgrund, (0, 0))
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                running = False
-
-    # Måla bakgrund
-    display.fill((0, 0, 0))
-    display.blit(bakgrund, (0, 0))
-
-    # Måla regn 
-    vatten.displayVatten(display)
-
-    pygame.display.update()
-
-pygame.quit()
+    if mode == "manual":                       # manuell bevattning
+        vatten.displayVattenManuellt(screen)   # regn bara med R
+        blommor.displayBlommor(screen)         # blommor med R
+    elif mode == "auto_system":                # automatisk bevattning
+        vatten.displayVatten(screen)           # regn alltid
+        blommor.displayBlommor_auto(screen)    # auto-cykel
+    elif mode == "halv":                       # bara halvvissna
+        vatten.displayVatten(screen)
+        blommor.display_halvVissnaBlommor(screen)
+    elif mode == "friska":                     # bara friska
+        vatten.displayVatten(screen)
+        blommor.display_friskaBlommor(screen)
+    else:                                      # reserv: behandla som manuell
+        vatten.displayVattenManuellt(screen)
+        blommor.displayBlommor(screen)
