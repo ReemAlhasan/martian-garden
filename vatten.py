@@ -31,7 +31,7 @@ def displayVatten(screen):
 
 def displayVattenManuellt(screen):
     """Regn bara när R hålls nere (manuellt läge)."""
-    keys = pygame.key_get_pressed()
+    keys = pygame.key.get_pressed()
     if not keys[pygame.K_r]:
         return
     _uppdatera_och_rita(screen, speed=3)
