@@ -15,17 +15,17 @@ def displayJorden(screen, mode="manual"):
     screen.blit(bakgrund, (0, 0))
 
     if mode == "manual":                       # manuell bevattning
-        vatten.displayVattenManuellt(screen)   # regn bara med R
+        vatten.visaVattenManuellt(screen)   # regn bara med R
         blommor.displayBlommor(screen)         # blommor med R
     elif mode == "auto_system":                # automatisk bevattning
-        vatten.displayVatten(screen)           # regn alltid
+        vatten.visaVatten(screen)           # regn alltid
         blommor.displayBlommor_auto(screen)    # auto-cykel
     elif mode == "halv":                       # bara halvvissna
-        vatten.displayVatten(screen)
+        vatten.visaVatten(screen)
         blommor.display_halvVissnaBlommor(screen)
     elif mode == "friska":                     # bara friska
-        vatten.displayVatten(screen)
+        vatten.visaVatten(screen)
         blommor.display_friskaBlommor(screen)
     else:                                      # reserv: behandla som manuell
-        vatten.displayVattenManuellt(screen)
+        vatten.visaVattenManuellt(screen)
         blommor.displayBlommor(screen)

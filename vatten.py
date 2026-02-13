@@ -24,12 +24,12 @@ def _uppdatera_och_rita(screen, speed):
         screen.blit(rain_img, (drop[0], drop[1]))
 
 
-def displayVatten(screen):
+def visaVatten(screen):
     """Regn i auto-läge (alltid regn)."""
     _uppdatera_och_rita(screen, speed=3)
 
 
-def displayVattenManuellt(screen):
+def visaVattenManuellt(screen):
     """Regn bara när R hålls nere (manuellt läge)."""
     keys = pygame.key.get_pressed()
     if not keys[pygame.K_r]:

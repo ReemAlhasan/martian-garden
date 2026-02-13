@@ -12,7 +12,7 @@ blommor_list = [
     [600, 420, 20],
 ]
 
-
+# funktion för att välja vilken bild som ska visas beroende på mängden fukt
 def _valj_bild(fukt, frisk_grans, torr_grans):
     if fukt > frisk_grans:
         return blommor
