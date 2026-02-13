@@ -3,12 +3,12 @@ import blommor         # blommor
 import vatten          # regn
 
 
-bakgrund = pygame.image.load('assets/mars.png')       # bakgrund
+bakgrund = pygame.image.load('assets/månen.png')      # bakgrundsbild
 ikon = pygame.image.load('assets/hello_world.jpeg')   # ikon
 
-# funktion för att visa planeten Mars 
-def visaMars(screen, mode="manual"):
-    """Rita bakgrund, regn och blommor."""
+# funktion för att visa månen
+def visaMånen(screen, mode="manual"):
+    """Rita månen, regn och blommor."""
     pygame.display.set_icon(ikon)
     pygame.display.set_caption('Självbevattningssystem')
 
