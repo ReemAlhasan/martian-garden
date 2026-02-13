@@ -25,7 +25,7 @@ def _valj_bild(fukt, frisk_grans, torr_grans):
 def displayBlommor(screen):
     """Manuell: R vattnar blommorna."""
     keys = pygame.key.get_pressed()
-    vattnar = keys[pygame.K_r]  # True bara när R hålls nere
+    vattnar = keys[pygame.K_v]  # True bara när R hålls nere
 
     FRISK_GRÄNS = 50
     TORR_GRÄNS = 20
