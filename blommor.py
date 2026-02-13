@@ -1,9 +1,9 @@
 import pygame
 
 # Bilder
-blommor = pygame.image.load("assets/blommor.png")              # friska blommor
-vissnaBlommor = pygame.image.load("assets/blommor_vissna.png") # vissna
-halvtVissnaBlommor = pygame.image.load("assets/blommor_halvt_vissna.png")  # halvvissna
+blommor = pygame.image.load("bilder/blommor.png")              # friska blommor
+vissnaBlommor = pygame.image.load("bilder/blommor_vissna.png") # vissna
+halvtVissnaBlommor = pygame.image.load("bilder/blommor_halvt_vissna.png")  # halvvissna
 
 # [x, y, fukt]
 blommor_list = [

@@ -1,7 +1,7 @@
 import pygame
 import random
 
-rain_img = pygame.image.load("assets/vatten.png")
+rain_img = pygame.image.load("bilder/vatten.png")
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 600

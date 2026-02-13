@@ -1,5 +1,5 @@
 import pygame
-import jorden
+import jorden # här importerar vi klassen jorden så att vi kan använda den 
 
 
 pygame.init()
@@ -18,7 +18,7 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    jorden.visaJorden(screen, mode="auto_system")
+    jorden.visaJorden(screen, mode="auto_system") # här visar vi jorden
     pygame.display.update()
 
 pygame.quit()

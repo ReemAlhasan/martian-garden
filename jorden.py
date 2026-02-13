@@ -3,8 +3,8 @@ import blommor
 import vatten
 
 
-bakgrund = pygame.image.load('assets/jorden.png')
-ikon = pygame.image.load('assets/hello_world.jpeg')
+bakgrund = pygame.image.load('bilder/jorden.png')
+ikon = pygame.image.load('bilder/hello_world.jpeg')
 
 
 def visaJorden(screen, mode="manual"):

@@ -3,8 +3,8 @@ import blommor         # blommor
 import vatten          # regn
 
 
-bakgrund = pygame.image.load('assets/mars.png')       # bakgrund
-ikon = pygame.image.load('assets/hello_world.jpeg')   # ikon
+bakgrund = pygame.image.load('bilder/mars.png')       # bakgrund
+ikon = pygame.image.load('bilder/hello_world.jpeg')   # ikon
 
 # funktion för att visa planeten Mars 
 def visaMars(screen, mode="manual"):
