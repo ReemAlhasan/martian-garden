@@ -32,6 +32,6 @@ def visaVatten(screen):
 def visaVattenManuellt(screen):
     """Regn bara när R hålls nere (manuellt läge)."""
     keys = pygame.key.get_pressed()
-    if not keys[pygame.K_r]:
+    if not keys[pygame.K_v]:
         return
     _uppdatera_och_rita(screen, speed=3)
