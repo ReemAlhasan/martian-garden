@@ -19,7 +19,7 @@ while running:
                 running = False
 
     # mode="manual": regn + vattning bara när R hålls nere
-    jorden.displayJorden(screen, mode="manual")
+    jorden.visaJorden(screen, mode="manual")
     pygame.display.update()
 
 pygame.quit()

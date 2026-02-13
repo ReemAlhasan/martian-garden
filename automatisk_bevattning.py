@@ -18,7 +18,7 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    jorden.displayJorden(screen, mode="auto_system")
+    jorden.visaJorden(screen, mode="auto_system")
     pygame.display.update()
 
 pygame.quit()

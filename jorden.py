@@ -7,7 +7,7 @@ bakgrund = pygame.image.load('assets/jorden.png')
 ikon = pygame.image.load('assets/hello_world.jpeg')
 
 
-def displayJorden(screen, mode="manual"):
+def visaJorden(screen, mode="manual"):
     """Rita jorden, regnet och blommorna beroende på läge."""
     pygame.display.set_icon(ikon)
     pygame.display.set_caption('Självbevattningssystem')
