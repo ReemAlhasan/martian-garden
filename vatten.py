@@ -1,18 +1,21 @@
+# klass för vatten
 import pygame
 import random
 
+#bild p vattendroppar
 rain_img = pygame.image.load("bilder/vatten.png")
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 600
 
+# skapa regndroppar
 rain_drops = []
-for _ in range(10):
+for _ in range(10): 
     x = random.randint(0, SCREEN_WIDTH)
     y = random.randint(-SCREEN_HEIGHT, 0)
     rain_drops.append([x, y])
 
-
+# måla vattendroppar på skärmen
 def _uppdatera_och_rita(screen, speed):
     for drop in rain_drops:
         drop[1] += speed
@@ -23,15 +26,15 @@ def _uppdatera_och_rita(screen, speed):
 
         screen.blit(rain_img, (drop[0], drop[1]))
 
-
+# visa vatten på skärmen 
 def visaVatten(screen):
     """Regn i auto-läge (alltid regn)."""
-    _uppdatera_och_rita(screen, speed=3)
+    _uppdatera_och_rita(screen, speed=3) # <-- ändra snabbhet på dropparna här!
 
-
+# visar vatten manuellt genom att hålla in v för vatten
 def visaVattenManuellt(screen):
     """Regn bara när R hålls nere (manuellt läge)."""
     keys = pygame.key.get_pressed()
     if not keys[pygame.K_v]:
         return
-    _uppdatera_och_rita(screen, speed=3)
+    _uppdatera_och_rita(screen, speed=3) # <-- ändra snabbhet på dropparna här!
