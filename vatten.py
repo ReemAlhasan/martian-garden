@@ -2,7 +2,7 @@
 import pygame
 import random
 
-#bild p vattendroppar
+#bild på vattendroppar
 rain_img = pygame.image.load("bilder/vatten.png")
 
 SCREEN_WIDTH = 1000
@@ -10,7 +10,7 @@ SCREEN_HEIGHT = 600
 
 # skapa regndroppar
 rain_drops = []
-for _ in range(10): 
+for _ in range(10): # <-- skapar såhär många vattendroppar!
     x = random.randint(0, SCREEN_WIDTH)
     y = random.randint(-SCREEN_HEIGHT, 0)
     rain_drops.append([x, y])
